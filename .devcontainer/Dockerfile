@@ -7,3 +7,9 @@ FROM mcr.microsoft.com/vscode/devcontainers/rust:0-${VARIANT}
 # [Optional] Uncomment this section to install additional packages.
 # RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 #     && apt-get -y install --no-install-recommends <your-package-list-here>
+
+COPY library-scripts/docker-debian.sh /tmp/library-scripts/
+ENV DOCKER_BUILDKIT=1
+RUN apt-get update && bash /tmp/library-scripts/docker-debian.sh
+ENTRYPOINT ["/usr/local/share/docker-init.sh"]
+CMD ["sleep", "infinity"]
