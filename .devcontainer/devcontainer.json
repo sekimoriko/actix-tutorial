@@ -52,5 +52,9 @@
 	"remoteUser": "vscode",
 	"features": {
 		"fish": "latest"
+	},
+	// to use bind mount
+	"remoteEnv": {
+		"LOCAL_WORKSPACE_FOLDER": "${localWorkspaceFolder}"
 	}
 }
