@@ -5,20 +5,6 @@
 	"dockerComposeFile": "./docker-compose.yml",
 	"service": "devcontainer",
 	"workspaceFolder": "/workspace",
-	// "build": {
-	// 	"dockerfile": "Dockerfile",
-	// 	"args": {
-	// 		// Use the VARIANT arg to pick a Debian OS version: buster, bullseye
-	// 		// Use bullseye when on local on arm64/Apple Silicon.
-	// 		"VARIANT": "buster"
-	// 	}
-	// },
-	// "runArgs": [
-	// 	"--cap-add=SYS_PTRACE",
-	// 	"--security-opt",
-	// 	"seccomp=unconfined",
-	// 	"--init"
-	// ],
 	"mounts": [
 		"source=/var/run/docker.sock,target=/var/run/docker-host.sock,type=bind"
 	],
@@ -54,7 +40,13 @@
 	// Comment out to connect as root instead. More info: https://aka.ms/vscode-remote/containers/non-root.
 	"remoteUser": "vscode",
 	"features": {
-		"fish": "latest"
+		"fish": "latest",
+		// https://github.com/microsoft/vscode-dev-containers/blob/main/script-library/docs/docker.md
+		"docker-from-docker": {
+			"version": "latest",
+			"moby": true,
+			"dockerDashComposeVersion": "v2"
+		}
 	},
 	// to use bind mount
 	"remoteEnv": {
