@@ -29,7 +29,9 @@
 				"rust-lang.rust-analyzer",
 				"tamasfe.even-better-toml",
 				"serayuzgur.crates",
-				"MS-vsliveshare.vsliveshare-pack"
+				"MS-vsliveshare.vsliveshare-pack",
+				"eamodio.gitlens",
+				"mhutchie.git-graph"
 			]
 		}
 	},
